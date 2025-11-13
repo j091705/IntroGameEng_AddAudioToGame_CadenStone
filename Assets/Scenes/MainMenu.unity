@@ -2944,9 +2944,9 @@ MonoBehaviour:
   playerExplosion: {fileID: 8300000, guid: dcc4afdad91e33743bcdb210108b3b4c, type: 3}
   BgMusicGameplay: {fileID: 8300000, guid: 4af475be82d04824ab7bd7a839bb106e, type: 3}
   BgMusicTitleScreen: {fileID: 8300000, guid: 383539b1352bf0c47bc6a459a4e46816, type: 3}
-  MilestoneSound1: {fileID: 0}
-  MilestoneSound2: {fileID: 0}
-  MilestoneSound3: {fileID: 0}
+  MilestoneSound1: {fileID: 8300000, guid: e3e2ac7a6eb99fd42a04b0473023eb03, type: 3}
+  MilestoneSound2: {fileID: 8300000, guid: a8dccececbcd9e74d9454605d1d2439e, type: 3}
+  MilestoneSound3: {fileID: 8300000, guid: 2fa9bb1bb94864943930988fa5de97fe, type: 3}
   pitchVariance: 0.05
 --- !u!4 &1337980917
 Transform:
