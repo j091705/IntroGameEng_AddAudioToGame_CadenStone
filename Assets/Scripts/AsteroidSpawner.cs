@@ -30,6 +30,7 @@ public class AsteroidSpawner : MonoBehaviour
             if (sfxManager != null)
                 backgroundMusic = sfxManager.GetBgMusicAudioSource();
         }
+    }
         void Start()
         {
             if (sfxManager != null)
@@ -53,6 +54,9 @@ public class AsteroidSpawner : MonoBehaviour
                     hazardCount = hazardCount + 2;
                     float hazardSpeed = -5 + (-1f * waveCount);
 
+                    if (backgroundMusic != null)
+                        backgroundMusic.pitch += tempoIncreasePercent;
+
                     for (int i = 0; i < hazardCount; i++)
                     {
                         Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
@@ -75,5 +79,4 @@ public class AsteroidSpawner : MonoBehaviour
             }
         }
 
-    }
 }

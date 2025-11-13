@@ -1590,7 +1590,7 @@ GameObject:
   - component: {fileID: 814336772}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2944,6 +2944,10 @@ MonoBehaviour:
   playerExplosion: {fileID: 8300000, guid: dcc4afdad91e33743bcdb210108b3b4c, type: 3}
   BgMusicGameplay: {fileID: 8300000, guid: 4af475be82d04824ab7bd7a839bb106e, type: 3}
   BgMusicTitleScreen: {fileID: 8300000, guid: 383539b1352bf0c47bc6a459a4e46816, type: 3}
+  MilestoneSound1: {fileID: 0}
+  MilestoneSound2: {fileID: 0}
+  MilestoneSound3: {fileID: 0}
+  pitchVariance: 0.05
 --- !u!4 &1337980917
 Transform:
   m_ObjectHideFlags: 0

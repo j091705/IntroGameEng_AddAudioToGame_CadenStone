@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public GameObject PausedMenuUI;
     public GameObject GameOverUI;
 
+    private HashSet<int> milestonesReached = new HashSet<int>();
+    private int[] scoreMilestones = { 100, 200, 300 };
+
     private GameObject asteroidSpawner;
 
     private bool gameOver;
@@ -38,6 +41,11 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        if (sfxManager == null)
+        {
+            sfxManager = FindObjectOfType<SFXManager>();
+        }
+
         if (Instance == null)
         {
             Instance = this;
@@ -60,6 +68,28 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
         shieldText.text = shield.ToString();
+
+        foreach (int milestone in scoreMilestones)
+
+        {
+
+            if (score >= milestone && !milestonesReached.Contains(milestone))
+
+            {
+
+                milestonesReached.Add(milestone);
+
+                if (sfxManager != null)
+
+                {
+                    sfxManager.PlayScoreMilestone(milestone);
+
+                }
+
+            }
+
+        }
+
 
         if (shield < 0)
         {  
@@ -93,7 +123,11 @@ public class GameManager : MonoBehaviour
                     gameState = GameState.GameOver;
                     gameOverScoreText.text = score.ToString();
                     asteroidSpawner = GameObject.Find("AsteroidSpawner");
-                    asteroidSpawner.SetActive(false);                    
+                    asteroidSpawner.SetActive(false);
+                    if (sfxManager != null && sfxManager.GetBgMusicAudioSource() != null)
+                    {
+                        sfxManager.GetBgMusicAudioSource().pitch = 1f;
+                    }
                 }
                 break;
 

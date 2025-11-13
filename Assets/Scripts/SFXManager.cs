@@ -10,6 +10,9 @@ public class SFXManager : MonoBehaviour
     public AudioClip playerExplosion;
     public AudioClip BgMusicGameplay;
     public AudioClip BgMusicTitleScreen;
+    public AudioClip MilestoneSound1;
+    public AudioClip MilestoneSound2;
+    public AudioClip MilestoneSound3;
 
     private AudioSource SFXaudioSource;
 
@@ -78,4 +81,35 @@ public class SFXManager : MonoBehaviour
     {
        return BgMusicAudioSource;
     }
+
+    public void PlayScoreMilestone(int milestone)
+
+    {
+
+        switch (milestone)
+
+        {
+
+            case 100:
+
+                SFXaudioSource.PlayOneShot(MilestoneSound1);
+
+                break;
+
+            case 200:
+
+                SFXaudioSource.PlayOneShot(MilestoneSound2);
+
+                break;
+
+            case 300:
+
+                SFXaudioSource.PlayOneShot(MilestoneSound3);
+
+                break;
+
+        }
+
+    }
+
 }
